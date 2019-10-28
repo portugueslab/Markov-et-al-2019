@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-from stytra_config import ConfiguredStytra
-from stytra_config.protocols.omr.E0030_long_term_adaptation_v01_normal import ClosedLoop1DProt
+from stytra import Stytra
+from E0030_long_term_adaptation_v01_normal import ClosedLoop1DProt
 from stytra.stimulation.stimuli import GratingStimulus, AcuteClosedLoop1D
 
 
@@ -22,7 +22,6 @@ class AcuteClosedLoop1DProt(ClosedLoop1DProt):
 
         gains = [dict(change_to=dict(gain=g)) for g in [0, 1, 0.33, 0.66, 1.33, 1.66, 2]]
         lags = [dict(change_to=dict(lag=l)) for l in [0.075, 0.15, 0.225, 0.3]]
-        # shunted_lag = [dict(change_to=dict(lag=0.5, shunted=True))]
         drops_starts = [0., 0., 0., 0., 0.225, 0.15, 0.075]
         drops_ends = [0.075, 0.15, 0.225, 0.3, 0.3, 0.3, 0.3]
 
@@ -41,4 +40,4 @@ class AcuteClosedLoop1DProt(ClosedLoop1DProt):
 
 
 if __name__ == "__main__":
-    s = ConfiguredStytra(protocol=AcuteClosedLoop1DProt())
+    s = Stytra(protocol=AcuteClosedLoop1DProt())

@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from stytra_config import ConfiguredStytra
+from stytra import Stytra
 from stytra.stimulation import Protocol
 from stytra.stimulation.stimuli import CalibratingClosedLoop1D, GratingStimulus, Basic_CL_1D
 from lightparam import Param
@@ -109,4 +109,4 @@ class ClosedLoop1DProt(Protocol):
 
 
 if __name__ == "__main__":
-    s = ConfiguredStytra(protocol=ClosedLoop1DProt())
+    s = Stytra(protocol=ClosedLoop1DProt())

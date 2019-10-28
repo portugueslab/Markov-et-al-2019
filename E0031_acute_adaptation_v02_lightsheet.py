@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
 
-from stytra_config import ConfiguredStytra
+from stytra import Stytra
 from stytra.stimulation import Protocol
-from stytra.stimulation.stimuli import CalibratingClosedLoop1D, Basic_CL_1D, GainChangerStimulus
+from stytra.stimulation.stimuli import Basic_CL_1D, GainChangerStimulus
 from lightparam import Param
 from stytra.stimulation.stimuli import GratingStimulus, AcuteClosedLoop1D
 
@@ -70,17 +70,9 @@ class ClosedLoop1DProtLS(Protocol):
         ClosedLoop1DGratings = type("Stim", (AcuteClosedLoop1D,
                                              GratingStimulus), {})
 
-        gains = [dict(change_to=dict(gain=g)) for g in [0, 1]] #0.66, 2]]
-        #lags = [dict(change_to=dict(lag=l)) for l in [0.075, 0.225]]
-        #drops_starts = [0., 0., 0.225, 0.075]
-        #drops_ends = [0.075, 0.225, 0.3, 0.3]
+        gains = [dict(change_to=dict(gain=g)) for g in [0, 1]]
 
-        #drops = []
-        #for start, end in zip(drops_starts, drops_ends):
-        #    drops.append(dict(change_to=dict(gain_drop_start=start,
-        #                                     gain_drop_end=end)))
-
-        conditions = gains  # + lags + drops
+        conditions = gains
 
         return ClosedLoop1DGratings(
             df_param=df,
@@ -109,4 +101,4 @@ class ClosedLoop1DProtLS(Protocol):
         return stimuli
 
 if __name__ == "__main__":
-    s = ConfiguredStytra(protocol=ClosedLoop1DProtLS())
+    s = Stytra(protocol=ClosedLoop1DProtLS())

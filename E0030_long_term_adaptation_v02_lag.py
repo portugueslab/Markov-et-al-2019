@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-from stytra_config import ConfiguredStytra
-from stytra_config.protocols.omr.E0030_long_term_adaptation_v01_normal import ClosedLoop1DProt
+from stytra import Stytra
+from E0030_long_term_adaptation_v01_normal import ClosedLoop1DProt
 from stytra.stimulation.stimuli import GratingStimulus, GainLagClosedLoop1D
 
 
@@ -28,4 +28,4 @@ class OpenLoopClosedLoop1DProt(ClosedLoop1DProt):
 
 
 if __name__ == "__main__":
-    s = ConfiguredStytra(protocol=OpenLoopClosedLoop1DProt())
+    s = Stytra(protocol=OpenLoopClosedLoop1DProt())
