@@ -1,0 +1,39 @@
+%% initial stuff
+clc; close all; clear all;
+addpath('C:\Markov_et_al_2021_Nat_Commun_data_code\analysis_code\imaging_analysis\whole_brain_imaging_long_term_adaptation');
+addpath('C:\Markov_et_al_2021_Nat_Commun_data_code\analysis_code\MATLfunctions');
+
+%% morphing anatomies
+% same is in the whole-brain exp
+
+%% pre-processing
+% analysis of the behavior, same as for behavioral experiments
+DM_wb_lta_behavior;
+% pre-process traces, morph ROIs
+DM_wb_lta_preprocessing;
+
+% these four programs save pre-processed data to:
+% ...\Markov_et_al_2021_Nat_Commun_data_code\data\whole_brain_imaging_long_term_adaptation\...
+% behavior
+% anatomies 
+% traces
+% ROIs
+
+%% subsequent analysis
+DM_wb_lta_main_analysis;
+% % compute grating- and bout-triggered averages
+% DM_wb_lta_trigaver;
+% % compute scores
+% DM_wb_lta_scores;
+% % compute criteria
+% DM_wb_lta_crit;
+% % compute data for sensorymotor clustering (as in the other whole-brain experiment)
+% DM_wb_lta_sensmot_clustering;
+% % fit the time constants
+% DM_wb_lta_fit_time_constants;
+
+% these three programs save final data to:
+% ...\Markov_et_al_2021_Nat_Commun_data_code\data\whole_brain_imaging_long_term_adaptation\...
+% triggered_traces
+% scores
+% criteria
