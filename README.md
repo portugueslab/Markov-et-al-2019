@@ -1,4 +1,7 @@
-# Markov et al 
+# Support code for Markov et al.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5147934.svg)](https://doi.org/10.5281/zenodo.5147934)
+
+
 This repository contains the Python and MATLAB scripts that have been used to produce and analyze the data presented in Markov et al, 2021 (preprint [here](https://www.biorxiv.org/content/10.1101/2020.02.12.945956v1)).
 
 The repo is organized in the following subfolders:
